@@ -21,9 +21,9 @@ spring:
   # todo 需替换配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/yangdadaprod
+    url: jdbc:mysql://120.77.222.74:3306/yangdadaprod
     username: root
-    password: 20182018Aa
+    password: 20182018Aa#
   # Redis 配置
   # todo 需替换配置，然后取消注释
   redis:
@@ -46,9 +46,9 @@ spring:
       yangdadaprod:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://localhost:3306/yangdadaprod
+        jdbc-url: jdbc:mysql://120.77.222.74:3306/yangdadaprod
         username: root
-        password: 20182018Aa
+        password: 20182018Aa#
     # 规则配置
     rules:
       sharding:
@@ -62,7 +62,7 @@ spring:
               algorithm-expression: user_answer_$->{appId % 2}
         tables:
           user_answer:
-            actual-data-nodes: yangdada.user_answer_$->{0..1}
+            actual-data-nodes: yangdadaprod.user_answer_$->{0..1}
             # 分表策略
             table-strategy:
               standard:
